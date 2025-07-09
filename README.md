@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Premium Pet Marketplace
+
+Welcome to the **Premium Pet Marketplace**, a Next.js-based web application designed to provide a full-service pet curation and brokerage experience. This platform connects users with premium pets, offering health guarantees, lifetime support, and a seamless, owner-managed process.
+
+## Features
+
+- **Premium Pet Curation**: Handpicked pets from verified breeders.
+- **Health Guarantees**: Every pet comes with certified health checks.
+- **Lifetime Support**: Ongoing support for pet owners.
+- **Modern UI/UX**: Built with a custom design system and Tailwind CSS v4.
+- **Responsive Design**: Optimized for all devices.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Ensure you have the following installed:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js (v16 or later)
+- npm, yarn, pnpm, or bun (choose your preferred package manager)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd frontend-pet-hub
+   ```
 
-## Learn More
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+3. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   # or
+   bun dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Design System
 
-## Deploy on Vercel
+This project uses a custom CSS design system integrated with Tailwind CSS v4. Key features include:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Custom Colors**: Harmonized with the brand identity.
+- **Typography**: Optimized for readability and aesthetics.
+- **Spacing and Layout**: Consistent and responsive.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Project Structure
+
+- `src/app`: Application entry point and global styles.
+- `src/components`: Reusable UI components.
+- `src/hooks`: Custom React hooks.
+- `src/lib`: Utility functions.
+- `src/styles`: Design system and global CSS.
+
+## Deployment
+
+The recommended deployment platform is [Vercel](https://vercel.com). Follow the [Next.js deployment guide](https://nextjs.org/docs/app/building-your-application/deploying) for detailed instructions.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bugfix.
+3. Commit your changes and push the branch.
+4. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Acknowledgments
+
+- Built with [Next.js](https://nextjs.org) and [Tailwind CSS](https://tailwindcss.com).
+- Inspired by the love for pets and premium services.
