@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3c58d147-fa80-4436-8e6b-45720dbd4441" name="Changes" comment="" />
+    <list default="true" id="3c58d147-fa80-4436-8e6b-45720dbd4441" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/HeroSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/ui/button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +112,15 @@
       <workItem from="1751728763932" duration="5942000" />
       <workItem from="1751737380077" duration="801000" />
       <workItem from="1751738262088" duration="427000" />
-      <workItem from="1751738743135" duration="1215000" />
+      <workItem from="1751738743135" duration="1239000" />
+      <workItem from="1751740005159" duration="2814000" />
+      <workItem from="1751747494687" duration="224000" />
+      <workItem from="1751747770007" duration="279000" />
+      <workItem from="1751748092125" duration="83000" />
+      <workItem from="1751748221168" duration="736000" />
+      <workItem from="1751805694011" duration="206000" />
+      <workItem from="1751806259980" duration="784000" />
+      <workItem from="1751807159363" duration="3952000" />
     </task>
     <servers />
   </component>

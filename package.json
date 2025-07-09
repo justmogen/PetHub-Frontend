@@ -9,19 +9,41 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.1.1",
+    "@radix-ui/react-dialog": "^1.1.14",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-select": "^2.2.5",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-tabs": "^1.1.12",
+    "@radix-ui/react-toast": "^1.2.14",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.16",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cva": "^0.0.0",
+    "gsap": "^3.13.0",
+    "lucide-react": "^0.525.0",
+    "next": "15.3.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.5"
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-animate": "^1.0.7",
+    "undefined": "^0.1.0",
+    "zod": "^3.25.75"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
     "eslint-config-next": "15.3.5",
-    "@eslint/eslintrc": "^3"
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
