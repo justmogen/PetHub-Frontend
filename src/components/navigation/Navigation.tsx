@@ -4,12 +4,13 @@ import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { useState } from "react";
-import PawHubLogo from "./PawHubLogo";
+import PawHubLogo from "@/components/shared/PawHubLogo";
 
 // Navigation items configuration
 const navItems = [
   { href: "/pets", label: "Pets" },
   { href: "/articles", label: "Articles" },
+  { href: "/events", label: "Events" },
 ];
 
 // Desktop Navigation Link Component

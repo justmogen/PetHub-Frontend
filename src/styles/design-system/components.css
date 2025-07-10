@@ -1,0 +1,176 @@
+/*
+ * =====================================================
+ * DESIGN SYSTEM - COMPONENTS
+ * =====================================================
+ * Reusable component styles and utilities
+ */
+
+/* ===== BUTTON SYSTEM ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--primary) / 0.9) 100%
+  );
+  color: hsl(var(--primary-foreground));
+  box-shadow: var(--shadow-gentle);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border: 1px solid hsl(var(--border));
+}
+
+.btn-secondary:hover {
+  background-color: hsl(var(--secondary) / 0.9);
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: hsl(var(--primary));
+  border: 2px solid hsl(var(--primary));
+}
+
+.btn-outline:hover {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+/* ===== CARD SYSTEM ===== */
+.card {
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.card-interactive {
+  transition: all var(--transition-slow);
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-medium);
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: var(--shadow-gentle);
+}
+
+/* ===== GLASS EFFECTS ===== */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-effect-dark {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== GRADIENT SYSTEM ===== */
+.gradient-brand {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--primary-600)) 100%
+  );
+}
+
+.gradient-brand-soft {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.1) 0%,
+    hsl(var(--accent) / 0.1) 100%
+  );
+}
+
+.gradient-nature {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--secondary)) 0%,
+    hsl(var(--success)) 100%
+  );
+}
+
+.gradient-warm {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--warning)) 100%
+  );
+}
+
+.gradient-text-brand {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--accent)) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* ===== FOCUS STYLES ===== */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2),
+    0 0 0 4px hsl(var(--background));
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px hsl(var(--ring)), 0 0 0 4px hsl(var(--background));
+}
+
+/* ===== SHARED LAYOUT UTILITIES ===== */
+.container-app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-spacing {
+  padding: var(--spacing-16) 0;
+}
+
+.section-spacing-sm {
+  padding: var(--spacing-8) 0;
+}
+
+.section-spacing-lg {
+  padding: var(--spacing-24) 0;
+}

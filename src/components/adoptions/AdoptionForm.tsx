@@ -208,7 +208,7 @@ const AdoptionForm = ({
                 </Button>
 
                 <p className="text-xs text-gray-500 text-center">
-                  This info helps breeders identify serious adopters. You'll be
+                  This info helps breeders identify serious adopters. You&apos;ll be
                   connected via WhatsApp to discuss further.
                 </p>
               </div>

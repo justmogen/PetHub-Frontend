@@ -1,0 +1,44 @@
+/*
+ * =====================================================
+ * SHARED ANIMATIONS - REUSABLE ANIMATION STYLES
+ * =====================================================
+ * Common animation patterns used across components
+ */
+
+/* Subtle background animations */
+.subtleShift {
+  animation: subtleShift 60s infinite alternate ease-in-out;
+}
+
+@keyframes subtleShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 50px 25px;
+  }
+}
+
+/* Hover transitions */
+.smoothTransition {
+  transition: all 0.2s ease;
+}
+
+.mediumTransition {
+  transition: all 0.3s ease;
+}
+
+.slowTransition {
+  transition: all 0.5s ease-in-out;
+}
+
+/* Focus ring styles */
+.focusRing:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Drop shadow effects */
+.subtleDropShadow {
+  filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.03));
+}

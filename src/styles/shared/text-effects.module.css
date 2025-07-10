@@ -1,0 +1,45 @@
+/*
+ * =====================================================
+ * SHARED TEXT EFFECTS - REUSABLE TEXT STYLES
+ * =====================================================
+ * Common text styling patterns used across components
+ */
+
+/* Responsive clamp font sizes */
+.titleClampLarge {
+  font-size: clamp(2.25rem, 4vw, 3.75rem);
+}
+
+.titleClampMedium {
+  font-size: clamp(1.875rem, 3.5vw, 3rem);
+}
+
+.subtitleClamp {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+.accentClamp {
+  font-size: clamp(1.125rem, 2.8vw, 1.5rem);
+}
+
+/* Text with backdrop blur effects */
+.textWithBackdrop {
+  backdrop-filter: blur(4px);
+}
+
+/* Line clamp utilities for consistent text truncation */
+.lineClamp2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.lineClamp3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

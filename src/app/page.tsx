@@ -1,12 +1,9 @@
 import HeroSection from "@/components/HeroSection";
-import CategoryGrid from "@/components/CategoryGrid";
+import { CategoryGrid } from "@/components/cards";
 import FeaturedPets from "@/components/FeaturedPets";
-import RecentMatches from "@/components/RecentMatches";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import BreedExplorer from "@/components/BreedExplorer";
-import BreederSpotlight from "@/components/BreederSpotlight";
-import PetMatchingEvents from "@/components/PetMatchingEvents";
-import TrustSection from "@/components/TrustSection";
+import { RecentMatches, BreederSpotlight } from "@/components/shared";
+import { BreedExplorer } from "@/components/breed-explorer";
+// PetMatchingEvents moved to its own page
 
 export default function HomePage() {
   return (
@@ -15,11 +12,8 @@ export default function HomePage() {
       <CategoryGrid />
       <FeaturedPets />
       <RecentMatches />
-      <WhyChooseUs />
       <BreedExplorer />
       <BreederSpotlight />
-      <PetMatchingEvents />
-      <TrustSection />
     </>
   );
 }

@@ -1,0 +1,9 @@
+# Social Image Placeholder
+
+This file is a placeholder for the Twitter Card image.
+
+Please replace this with a properly designed image following these specifications:
+- Size: 1200×600 pixels
+- Content: PawHub logo, compelling pet image, tagline "Find Your Perfect Companion"
+- Format: JPG or PNG (JPG preferred for smaller file size)
+- Quality: High but optimized for web

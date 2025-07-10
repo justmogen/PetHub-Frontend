@@ -1,0 +1,86 @@
+/*
+ * =====================================================
+ * DESIGN SYSTEM - SPACING & SIZING
+ * =====================================================
+ * Consistent spacing, sizing, and layout tokens
+ */
+
+:root {
+  /* ===== SPACING SCALE (8px grid) ===== */
+  --space-xs: 0.25rem; /* 4px */
+  --space-sm: 0.5rem; /* 8px */
+  --space-md: 1rem; /* 16px */
+  --space-lg: 1.5rem; /* 24px */
+  --space-xl: 2rem; /* 32px */
+  --space-2xl: 3rem; /* 48px */
+  --space-3xl: 4rem; /* 64px */
+  --space-4xl: 6rem; /* 96px */
+
+  /* ===== BORDER RADIUS ===== */
+  --radius: 0.875rem; /* 14px - Modern rounded */
+  --radius-sm: 0.625rem; /* 10px - Small radius */
+  --radius-lg: 1.25rem; /* 20px - Large radius */
+  --radius-xl: 1.75rem; /* 28px - Extra large radius */
+  --radius-2xl: 2.5rem; /* 40px - Super rounded */
+
+  /* ===== SHADOWS ===== */
+  --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.08), 0 1px 2px 0 rgb(0 0 0 / 0.06);
+  --shadow-gentle: 0 4px 6px -1px rgb(0 0 0 / 0.08),
+    0 2px 4px -1px rgb(0 0 0 / 0.06);
+  --shadow-medium: 0 10px 15px -3px rgb(0 0 0 / 0.08),
+    0 4px 6px -2px rgb(0 0 0 / 0.05);
+  --shadow-strong: 0 20px 25px -5px rgb(0 0 0 / 0.12),
+    0 10px 10px -5px rgb(0 0 0 / 0.04);
+  --shadow-brand: 0 8px 32px 0 rgb(235 111 71 / 0.15);
+  --shadow-glow: 0 0 20px rgb(235 111 71 / 0.3);
+  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.06);
+
+  /* ===== BLUR VALUES ===== */
+  --blur-sm: 4px;
+  --blur-md: 8px;
+  --blur-lg: 16px;
+  --blur-xl: 24px;
+}
+
+/* ===== CONTAINER SYSTEM ===== */
+.container-responsive {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 80rem;
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* ===== SECTION PADDING SYSTEM ===== */
+.section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}

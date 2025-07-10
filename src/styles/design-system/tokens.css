@@ -1,0 +1,96 @@
+/*
+ * =====================================================
+ * DESIGN SYSTEM - CORE TOKENS
+ * =====================================================
+ * Base color palette and design tokens
+ */
+
+:root {
+  /* ===== CORE COLORS ===== */
+  --background: 0 0% 100%;
+  --foreground: 222 15% 15%;
+  --muted: 215 20% 96%;
+  --muted-foreground: 218 10% 46%;
+
+  /* ===== BRAND COLORS - REFINED PALETTE ===== */
+  /* Primary - Warm terracotta */
+  --primary: 15 88% 65%; /* #EB6F47 */
+  --primary-foreground: 0 0% 98%;
+  --primary-50: 15 100% 97%;
+  --primary-100: 15 100% 94%;
+  --primary-200: 15 96% 87%;
+  --primary-500: 15 88% 65%;
+  --primary-600: 15 82% 58%;
+  --primary-700: 15 75% 48%;
+
+  /* Secondary - Sage green */
+  --secondary: 150 25% 60%; /* #8FAD9D */
+  --secondary-foreground: 0 0% 98%;
+  --secondary-50: 150 30% 97%;
+  --secondary-100: 150 25% 92%;
+  --secondary-200: 150 25% 85%;
+  --secondary-500: 150 25% 60%;
+  --secondary-600: 150 28% 52%;
+  --secondary-700: 150 32% 42%;
+
+  /* Accent - Warm golden honey */
+  --accent: 38 85% 72%; /* #F2C57C */
+  --accent-foreground: 35 15% 25%;
+  --accent-50: 38 90% 96%;
+  --accent-100: 38 85% 90%;
+  --accent-500: 38 85% 72%;
+  --accent-600: 38 80% 65%;
+
+  /* Neutral - Sophisticated warm grays */
+  --neutral: 25 8% 45%; /* #726B64 */
+  --neutral-foreground: 0 0% 98%;
+  --neutral-50: 25 10% 97%;
+  --neutral-100: 25 8% 92%;
+  --neutral-200: 25 6% 85%;
+  --neutral-300: 25 6% 70%;
+  --neutral-400: 25 7% 55%;
+  --neutral-500: 25 8% 45%;
+  --neutral-600: 25 10% 35%;
+  --neutral-700: 25 12% 25%;
+  --neutral-800: 25 15% 18%;
+  --neutral-900: 25 18% 12%;
+
+  /* ===== SEMANTIC COLORS ===== */
+  --success: 145 70% 42%;
+  --success-foreground: 0 0% 98%;
+  --success-50: 145 75% 96%;
+
+  --warning: 42 95% 58%;
+  --warning-foreground: 42 20% 15%;
+  --warning-50: 42 100% 96%;
+
+  --error: 358 75% 59%;
+  --error-foreground: 0 0% 98%;
+  --error-50: 358 80% 96%;
+
+  --info: 212 85% 58%;
+  --info-foreground: 0 0% 98%;
+  --info-50: 212 90% 96%;
+
+  /* ===== UI COMPONENT COLORS ===== */
+  --card: 0 0% 100%;
+  --card-foreground: 222 15% 15%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 15% 15%;
+  --border: 220 12% 90%;
+  --input: 220 12% 94%;
+  --ring: 15 88% 65%;
+}
+
+/* ===== DARK MODE OVERRIDES ===== */
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 18 95% 67%;
+}

@@ -1,0 +1,104 @@
+/*
+ * =====================================================
+ * DESIGN SYSTEM - TYPOGRAPHY
+ * =====================================================
+ * Font definitions, sizes, and text styles
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Fredoka:wght@300..700&display=swap");
+
+:root {
+  /* ===== TYPOGRAPHY SCALE ===== */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-lg: 1.125rem; /* 18px */
+  --font-size-xl: 1.25rem; /* 20px */
+  --font-size-2xl: 1.5rem; /* 24px */
+  --font-size-3xl: 1.875rem; /* 30px */
+  --font-size-4xl: 2.25rem; /* 36px */
+  --font-size-5xl: 3rem; /* 48px */
+
+  /* ===== ANIMATION VARIABLES ===== */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ===== GLOBAL TYPOGRAPHY ===== */
+body {
+  font-family: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ===== HEADING STYLES ===== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  font-family: "Nunito", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: "Fredoka", "Nunito", ui-sans-serif, system-ui, sans-serif;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 4vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: clamp(1.875rem, 3.5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+/* ===== LOGO RESPONSIVE SIZING ===== */
+.logo-text {
+  font-size: 1.5rem; /* 24px - mobile */
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  font-family: "Nunito", ui-sans-serif, system-ui, sans-serif;
+}
+
+@media (min-width: 640px) {
+  .logo-text {
+    font-size: 1.75rem; /* 28px - tablet */
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo-text {
+    font-size: 2rem; /* 32px - desktop */
+  }
+}
+
+/* ===== PARAGRAPH STYLES ===== */
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.text-balance {
+  text-wrap: balance;
+}

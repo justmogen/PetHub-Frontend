@@ -1,5 +1,3 @@
-@import "tailwindcss";
-
 /*
  * =====================================================
  * PREMIUM PET MARKETPLACE - DESIGN SYSTEM
@@ -8,11 +6,10 @@
  * Optimized for Tailwind CSS v4 and modern web standards
  */
 
-/* ===== CORE DESIGN SYSTEM IMPORT ===== */
-@import "../styles/design-system/index.css";
-
-/* ===== GLOBAL BODY STYLES ===== */
-body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
-}
+/* ===== CORE DESIGN SYSTEM IMPORTS ===== */
+@import "./tokens.css";
+@import "./spacing.css";
+@import "./typography.css";
+@import "./components.css";
+@import "./animations.css";
+@import "./utilities.css";

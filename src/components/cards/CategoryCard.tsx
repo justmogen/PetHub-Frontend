@@ -63,10 +63,12 @@ const CategoryCard = ({
 
           {/* Content */}
           <div className="space-y-2">
-            <h3 className="font-bold text-xl text-white group-hover:scale-105 transition-transform duration-300">
+            <h3 className="font-bold text-xl text-white group-hover:scale-105 transition-transform duration-300 drop-shadow-sm">
               {title}
             </h3>
-            <p className="text-white/90 text-sm font-medium">{subtitle}</p>
+            <p className="text-white/90 text-sm font-medium drop-shadow-sm">
+              {subtitle}
+            </p>
             {description && (
               <p className="text-white/70 text-xs mt-2">{description}</p>
             )}

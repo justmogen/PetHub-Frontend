@@ -1,18 +1,20 @@
+"use client";
+
 import {
   Heart,
   Shield,
   Stethoscope,
   Users,
   Home,
-  X,
   PawPrint,
 } from "lucide-react";
+import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
-import AdoptionForm from "./AdoptionForm";
+import { AdoptionForm } from "../adoptions";
 
 interface PetCardProps {
   id: string;
@@ -27,8 +29,15 @@ interface PetCardProps {
   location: string;
 }
 
+interface AdoptionFormData {
+  name: string;
+  phone: string;
+  location: string;
+  experience: string;
+  reason: string;
+}
+
 const PetCard = ({
-  id,
   name,
   breed,
   age,
@@ -48,7 +57,7 @@ const PetCard = ({
     setShowAdoptionForm(true);
   };
 
-  const handleAdoptionSubmit = (data: any) => {
+  const handleAdoptionSubmit = (data: AdoptionFormData) => {
     const message = `Hi! I'm ${data.name} from ${data.location}. I'm interested in adopting ${name} (${breed}). 
 
 My details:
@@ -79,14 +88,16 @@ I'd love to discuss the adoption process with you. Thank you!`;
       <Card className="overflow-hidden transition-all duration-500 bg-white border-0 group w-full max-w-sm mx-auto rounded-3xl">
         {/* Image Section */}
         <div className="relative h-48 sm:h-52 overflow-hidden">
-          <img
+          <Image
             src={image}
             alt={name}
+            width={400}
+            height={300}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
 
           {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/20 to-transparent"></div>
 
           {/* Heart Button */}
           <button className="absolute top-4 right-4 p-2.5 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-110">
@@ -96,19 +107,19 @@ I'd love to discuss the adoption process with you. Thank you!`;
           {/* Health Badges - Redesigned */}
           <div className="absolute top-4 left-4 flex flex-col gap-2">
             {isVaccinated && (
-              <Badge className="bg-emerald-500/90 backdrop-blur-sm hover:bg-emerald-600 text-white border-0 shadow-md text-xs font-semibold">
+              <Badge className="text-white border-0 shadow-md text-xs font-semibold bg-emerald-500/90 backdrop-blur-sm hover:bg-emerald-500">
                 <Shield className="w-3 h-3 mr-1" />
                 Vaccinated
               </Badge>
             )}
             {isVetChecked && (
-              <Badge className="bg-blue-500/90 backdrop-blur-sm hover:bg-blue-600 text-white border-0 shadow-md text-xs font-semibold">
+              <Badge className="text-white border-0 shadow-md text-xs font-semibold bg-blue-500/90 backdrop-blur-sm hover:bg-blue-500">
                 <Stethoscope className="w-3 h-3 mr-1" />
                 Vet-Checked
               </Badge>
             )}
             {isGoodWithKids && (
-              <Badge className="bg-purple-500/90 backdrop-blur-sm hover:bg-purple-600 text-white border-0 shadow-md text-xs font-semibold">
+              <Badge className="text-white border-0 shadow-md text-xs font-semibold bg-purple-500/90 backdrop-blur-sm hover:bg-purple-500">
                 <Users className="w-3 h-3 mr-1" />
                 Kid-Friendly
               </Badge>
@@ -117,7 +128,7 @@ I'd love to discuss the adoption process with you. Thank you!`;
 
           {/* Available Badge - Enhanced */}
           <div className="absolute bottom-4 left-4">
-            <Badge className="bg-gradient-to-r from-[#E07A5F] to-[#D86B56] text-white border-0 shadow-lg px-3 py-1.5 text-xs font-bold rounded-full">
+            <Badge className="text-white border-0 shadow-lg px-3 py-1.5 text-xs font-bold rounded-full bg-gradient-to-r from-primary to-primary/90">
               <PawPrint className="w-3 h-3 mr-1" />
               Available Now
             </Badge>
@@ -147,7 +158,7 @@ I'd love to discuss the adoption process with you. Thank you!`;
           <div className="space-y-3">
             <Button
               onClick={handleChooseMe}
-              className="w-full bg-gradient-to-r from-[#E07A5F] to-[#D86B56] hover:from-[#D86B56] hover:to-[#C85A45] text-white rounded-2xl py-3 font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl text-base"
+              className="w-full text-white rounded-2xl py-3 font-semibold transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl text-base bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary/80"
             >
               <Home className="w-4 h-4 mr-2" />
               Adopt Me Today! 💕
