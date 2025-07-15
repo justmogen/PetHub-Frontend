@@ -75,22 +75,29 @@ const AdoptionForm = ({
       onClick={onClose}
     >
       <Card
-        className="w-full max-w-md max-h-[90vh] overflow-y-auto"
+        className="w-full max-w-md max-h-[90vh] overflow-y-auto border-brand-primary/20 shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="p-6">
+        <div className="p-6 bg-gradient-to-br from-brand-primary/5 to-brand-secondary/5">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#E07A5F] rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-brand-primary to-brand-secondary rounded-full flex items-center justify-center">
                 <PawPrint className="w-5 h-5 text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-bold">Adopt {petName}</h3>
+                <h3 className="text-xl font-bold text-brand-primary">
+                  Adopt {petName}
+                </h3>
                 <p className="text-gray-600 text-sm">{petBreed}</p>
               </div>
             </div>
-            <Button variant="ghost" size="sm" onClick={onClose}>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={onClose}
+              className="hover:bg-brand-primary/10"
+            >
               <X className="w-4 h-4" />
             </Button>
           </div>
@@ -136,7 +143,10 @@ const AdoptionForm = ({
                   <FormItem>
                     <FormLabel>Location</FormLabel>
                     <FormControl>
-                      <Input placeholder="City/Area in Kenya" {...field} />
+                      <Input
+                        placeholder="e.g., Nairobi, Mombasa, Kisumu"
+                        {...field}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -158,17 +168,17 @@ const AdoptionForm = ({
                           <SelectValue placeholder="Select your experience level" />
                         </SelectTrigger>
                       </FormControl>
-                      <SelectContent>
-                        <SelectItem value="first-time">
+                      <SelectContent className="bg-white shadow-lg">
+                        <SelectItem value="first-time" className="hover:bg-brand-primary/10">
                           First-time pet owner
                         </SelectItem>
-                        <SelectItem value="some">
+                        <SelectItem value="some" className="hover:bg-brand-primary/10">
                           Some experience with pets
                         </SelectItem>
-                        <SelectItem value="experienced">
+                        <SelectItem value="experienced" className="hover:bg-brand-primary/10">
                           Very experienced with pets
                         </SelectItem>
-                        <SelectItem value="professional">
+                        <SelectItem value="professional" className="hover:bg-brand-primary/10">
                           Professional (vet, trainer, etc.)
                         </SelectItem>
                       </SelectContent>
@@ -199,7 +209,7 @@ const AdoptionForm = ({
               <div className="pt-4 space-y-3">
                 <Button
                   type="submit"
-                  className="w-full bg-[#E07A5F] hover:bg-[#d4654a]"
+                  className="w-full bg-gradient-to-r from-brand-primary to-brand-secondary hover:from-brand-primary/90 hover:to-brand-secondary/90 text-white font-semibold py-2 rounded-lg shadow-lg transition-all duration-300"
                   disabled={isSubmitting}
                 >
                   {isSubmitting
@@ -208,8 +218,8 @@ const AdoptionForm = ({
                 </Button>
 
                 <p className="text-xs text-gray-500 text-center">
-                  This info helps breeders identify serious adopters. You&apos;ll be
-                  connected via WhatsApp to discuss further.
+                  This info helps breeders identify serious adopters.
+                  You&apos;ll be connected via WhatsApp to discuss further.
                 </p>
               </div>
             </form>

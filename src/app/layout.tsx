@@ -2,8 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
+import Footer from "@/components/Footer";
 import { socialImages } from "@/lib/images";
+import { ReduxProvider } from "@/lib/redux";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -86,9 +87,11 @@ export default function RootLayout({
       <body
         className={`${nunito.variable} font-sans antialiased bg-gray-50 text-gray-900`}
       >
-        <Navigation />
-        <main>{children}</main>
-        <Footer />
+        <ReduxProvider>
+          <Navigation />
+          <main>{children}</main>
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

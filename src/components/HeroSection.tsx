@@ -11,6 +11,11 @@ import HeroContent from "./hero/HeroContent";
 import HeroImage from "./hero/HeroImage";
 import WaveTransition from "./hero/WaveTransition";
 
+// Import shared styles for enhanced UI
+import sharedGradients from "@/styles/shared/gradients.module.css";
+import sharedAnimations from "@/styles/shared/animations.module.css";
+import sharedPatterns from "@/styles/shared/patterns.module.css";
+
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -152,8 +157,17 @@ const HeroSection = () => {
   return (
     <section
       ref={heroRef}
-      className="relative h-screen min-h-[600px] bg-gradient-to-br from-primary-50/40 via-background to-secondary-50/30 overflow-hidden"
+      className={`relative h-screen min-h-[600px] bg-gradient-to-br from-primary-50/40 via-background to-secondary-50/30 overflow-hidden ${sharedPatterns.elegantPattern} ${sharedPatterns.complexOverlay}`}
     >
+      {/* Enhanced background with pattern overlay */}
+      <div
+        className={`absolute inset-0 ${sharedAnimations.subtleShift} opacity-40`}
+      >
+        <div
+          className={`w-full h-full ${sharedGradients.backgroundGradientRadial}`}
+        ></div>
+      </div>
+
       {/* Background components */}
       <HeroBackground backgroundRef={backgroundRef} />
       <FloatingPaws pawsRef={pawsRef} />

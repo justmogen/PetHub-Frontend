@@ -5,13 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c58d147-fa80-4436-8e6b-45720dbd4441" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/HeroSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ui/button.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IMPROVEMENTS.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/COMPONENT_ORGANIZATION.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/COMPREHENSIVE_IMPROVEMENT_PLAN.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/CSS_STYLING_GUIDE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/IMAGE_OPTIMIZATION_QUICKSTART.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FeaturedPets.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FeaturedPets.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HeroSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cards/PetCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cards/PetCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/cards/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/cards/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/featured-pets/PetCardGrid.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/featured-pets/PetCardGrid.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/hero/HeroContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/hero/HeroContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/shared/patterns.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/shared/patterns.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,26 +63,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
-    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/black/frontend-pet-hub/src&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/black/frontend-pet-hub/node_modules/typescript/lib&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "last_opened_file_path": "/home/black/frontend-pet-hub",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/home/black/frontend-pet-hub/node_modules/typescript/lib"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -121,6 +130,8 @@
       <workItem from="1751805694011" duration="206000" />
       <workItem from="1751806259980" duration="784000" />
       <workItem from="1751807159363" duration="3952000" />
+      <workItem from="1752303692759" duration="125000" />
+      <workItem from="1752303910078" duration="50000" />
     </task>
     <servers />
   </component>

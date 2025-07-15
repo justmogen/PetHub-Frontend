@@ -4,12 +4,15 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-// Importing modular components
+// API and components
+import { useGetFeaturedPetsQuery } from "@/lib/api/services/petApi";
 import FloatingDecorations from "./featured-pets/FloatingDecorations";
 import SectionHeader from "./featured-pets/SectionHeader";
 import PetCardGrid from "./featured-pets/PetCardGrid";
 import FooterButton from "./featured-pets/FooterButton";
 import Stats from "./featured-pets/Stats";
+import { FeaturedPetsSkeleton } from "./featured-pets/FeaturedPetsSkeleton";
+import { FeaturedPetsError } from "./featured-pets/FeaturedPetsError";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -21,49 +24,14 @@ const FeaturedPets = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const decorativeRef = useRef<HTMLDivElement>(null);
 
-  const featuredPets = [
-    {
-      id: "pet-1",
-      name: "Bella",
-      breed: "Golden Retriever",
-      age: "2 years",
-      price: "45,000",
-      image:
-        "https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&q=80&w=500",
-      isVaccinated: true,
-      isVetChecked: true,
-      isGoodWithKids: true,
-      location: "Nairobi, Kenya",
-    },
-    {
-      id: "pet-2",
-      name: "Max",
-      breed: "German Shepherd",
-      age: "1 year",
-      price: "55,000",
-      image:
-        "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?auto=format&fit=crop&q=80&w=500",
-      isVaccinated: true,
-      isVetChecked: true,
-      isGoodWithKids: true,
-      location: "Mombasa, Kenya",
-    },
-    {
-      id: "pet-3",
-      name: "Luna",
-      breed: "Labrador Mix",
-      age: "6 months",
-      price: "35,000",
-      image:
-        "https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=500",
-      isVaccinated: true,
-      isVetChecked: false,
-      isGoodWithKids: true,
-      location: "Kisumu, Kenya",
-    },
-  ];
+  // Fetch featured pets from API
+  const { data: featuredPets, isLoading, error } = useGetFeaturedPetsQuery({ limit: 6 });
 
+  // GSAP Animation setup
   useEffect(() => {
+    // Only run animations if we have pets to display
+    if (!featuredPets || featuredPets.length === 0) return;
+
     const cards = cardsRef.current?.children || [];
     const decorativeElements = decorativeRef.current?.children || [];
 
@@ -99,73 +67,53 @@ const FeaturedPets = () => {
       },
     });
 
-    tl.to(Array.from(decorativeElements), {
-      duration: 1,
+    // Animate header
+    tl.to([titleRef.current, subtitleRef.current], {
       opacity: 1,
-      scale: 1,
-      stagger: 0.2,
+      y: 0,
+      duration: 0.8,
       ease: "power2.out",
-    })
-      .to(
-        [titleRef.current, subtitleRef.current],
-        {
-          duration: 0.8,
-          opacity: 1,
-          y: 0,
-          stagger: 0.2,
-          ease: "power2.out",
-        },
-        "-=0.5"
-      )
-      .to(
-        Array.from(cards),
-        {
-          duration: 0.6,
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          stagger: 0.15,
-          ease: "back.out(1.7)",
-        },
-        "-=0.4"
-      )
-      .to(
-        buttonRef.current,
-        {
-          duration: 0.5,
-          opacity: 1,
-          y: 0,
-          ease: "power2.out",
-        },
-        "-=0.2"
-      );
+      stagger: 0.2,
+    });
 
-    // Enhanced hover animations for cards
-    if (cards.length > 0) {
-      Array.from(cards).forEach((card) => {
-        const element = card as HTMLElement;
+    // Animate cards
+    tl.to(
+      Array.from(cards),
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 0.15,
+      },
+      "-=0.4"
+    );
 
-        element.addEventListener("mouseenter", () => {
-          gsap.to(element, {
-            duration: 0.3,
-            y: -10,
-            scale: 1.02,
-            boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-            ease: "power2.out",
-          });
-        });
+    // Animate button
+    tl.to(
+      buttonRef.current,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+      },
+      "-=0.3"
+    );
 
-        element.addEventListener("mouseleave", () => {
-          gsap.to(element, {
-            duration: 0.3,
-            y: 0,
-            scale: 1,
-            boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
-            ease: "power2.out",
-          });
-        });
-      });
-    }
+    // Animate decorative elements
+    tl.to(
+      Array.from(decorativeElements),
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.1,
+      },
+      "-=0.5"
+    );
 
     // Floating animation for decorative elements
     gsap.to(Array.from(decorativeElements), {
@@ -178,7 +126,31 @@ const FeaturedPets = () => {
       ease: "power1.inOut",
       stagger: 2,
     });
-  }, []);
+
+    // Cleanup function
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, [featuredPets]);
+
+  // Early return for loading state
+  if (isLoading) {
+    return <FeaturedPetsSkeleton />;
+  }
+
+  // Early return for error state
+  if (error) {
+    return <FeaturedPetsError onRetry={() => window.location.reload()} />;
+  }
+
+  // Early return if no pets available
+  if (!featuredPets || featuredPets.length === 0) {
+    return <FeaturedPetsError 
+      title="No Featured Pets Available" 
+      message="Check back later for our featured pets selection."
+      onRetry={() => window.location.reload()} 
+    />;
+  }
 
   return (
     <section

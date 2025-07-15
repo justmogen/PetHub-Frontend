@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import styles from "../HeroSection.module.css";
 import sharedGradients from "@/styles/shared/gradients.module.css";
 import sharedTextEffects from "@/styles/shared/text-effects.module.css";
+import sharedAnimations from "@/styles/shared/animations.module.css";
 
 interface HeroContentProps {
   titleRef: React.RefObject<HTMLHeadingElement | null>;
@@ -24,7 +25,9 @@ const HeroContent: React.FC<HeroContentProps> = ({
   return (
     <div className="max-w-4xl pt-24 md:pt-20 lg:pt-0">
       <div className="mb-6 md:mb-8">
-        <span className="inline-block px-3 py-1.5 md:px-4 md:py-2 lg:px-6 lg:py-3 rounded-full text-xs md:text-sm lg:text-base font-bold mb-4 md:mb-6 border border-primary/20 bg-primary/10 text-primary shadow-sm hover:shadow transition-all duration-300 hover:bg-primary/15 cursor-default">
+        <span
+          className={`inline-block px-3 py-1.5 md:px-4 md:py-2 lg:px-6 lg:py-3 rounded-full text-xs md:text-sm lg:text-base font-bold mb-4 md:mb-6 border border-primary/20 bg-primary/10 text-primary shadow-sm hover:shadow transition-all duration-300 hover:bg-primary/15 cursor-default ${sharedAnimations.mediumTransition} ${sharedTextEffects.textWithBackdrop}`}
+        >
           🏆 Kenya&apos;s Premier Pet Curation Service
         </span>
       </div>
@@ -58,7 +61,7 @@ const HeroContent: React.FC<HeroContentProps> = ({
         <Button
           ref={buttonRef}
           size="lg"
-          className={`font-bold px-8 md:px-10 py-6 md:py-8 text-lg md:text-xl rounded-2xl transition-all duration-300 border-0 bg-gradient-to-br from-primary to-primary-600 text-primary-foreground shadow-md hover:-translate-y-1 ${styles.primaryButton} ${styles.buttonFocusRing}`}
+          className={`font-bold px-8 md:px-10 py-6 md:py-8 text-lg md:text-xl rounded-2xl border-0 text-primary-foreground shadow-md hover:-translate-y-1 ${sharedGradients.buttonGradientPrimary} ${sharedAnimations.mediumTransition} ${sharedAnimations.focusRing} ${styles.primaryButton}`}
           onClick={() => router.push("/pets")}
         >
           🐕 Browse Pets
@@ -68,7 +71,7 @@ const HeroContent: React.FC<HeroContentProps> = ({
           ref={matchButtonRef}
           size="lg"
           variant="outline"
-          className={`font-bold px-8 md:px-10 py-6 md:py-8 text-lg md:text-xl rounded-2xl transition-all duration-300 border-2 border-secondary text-secondary hover:-translate-y-1 ${styles.secondaryButton} ${styles.buttonFocusRing}`}
+          className={`font-bold px-8 md:px-10 py-6 md:py-8 text-lg md:text-xl rounded-2xl border-2 border-secondary text-secondary hover:-translate-y-1 ${sharedAnimations.mediumTransition} ${sharedAnimations.focusRing} ${styles.secondaryButton}`}
           onClick={() => router.push("/match")}
         >
           ✨ Find My Match
@@ -77,19 +80,25 @@ const HeroContent: React.FC<HeroContentProps> = ({
 
       {/* Trust Indicators */}
       <div className="mt-12 md:mt-16 flex flex-wrap items-center gap-6 md:gap-12 text-sm md:text-base">
-        <div className="flex items-center gap-2 md:gap-3 transition-transform duration-300 hover:translate-y-[-2px]">
+        <div
+          className={`flex items-center gap-2 md:gap-3 ${sharedAnimations.mediumTransition} hover:translate-y-[-2px]`}
+        >
           <span className="text-lg md:text-xl font-bold text-primary">✓</span>
           <span className="font-semibold text-foreground">
             Verified Breeders
           </span>
         </div>
-        <div className="flex items-center gap-2 md:gap-3 transition-transform duration-300 hover:translate-y-[-2px]">
+        <div
+          className={`flex items-center gap-2 md:gap-3 ${sharedAnimations.mediumTransition} hover:translate-y-[-2px]`}
+        >
           <span className="text-lg md:text-xl font-bold text-secondary">✓</span>
           <span className="font-semibold text-foreground">
             Health Certified
           </span>
         </div>
-        <div className="flex items-center gap-2 md:gap-3 transition-transform duration-300 hover:translate-y-[-2px]">
+        <div
+          className={`flex items-center gap-2 md:gap-3 ${sharedAnimations.mediumTransition} hover:translate-y-[-2px]`}
+        >
           <span className="text-lg md:text-xl font-bold text-primary">✓</span>
           <span className="font-semibold text-foreground">
             Lifetime Support

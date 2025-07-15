@@ -1,20 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import PetCard from "@/components/cards/PetCard";
-
-interface Pet {
-  id: string;
-  name: string;
-  breed: string;
-  age: string;
-  price?: string;
-  image: string;
-  isVaccinated?: boolean;
-  isVetChecked?: boolean;
-  isGoodWithKids?: boolean;
-  location: string;
-}
+import { PetCard } from "@/components/cards/PetCard";
+import type { Pet } from "@/lib/api/types";
 
 interface PetCardGridProps {
   cardsRef: React.RefObject<HTMLDivElement | null>;
@@ -30,11 +18,11 @@ const PetCardGrid: React.FC<PetCardGridProps> = ({ cardsRef, pets }) => {
       {pets.map((pet, index) => (
         <Link
           key={index}
-          href={`/pet/${pet.id}`}
+          href={`/pets/${pet.id}`}
           className="group transform transition-all duration-300"
         >
           <div className="rounded-3xl shadow-lg overflow-hidden bg-card border border-border transition-all duration-300 hover:scale-105 hover:shadow-md">
-            <PetCard {...pet} />
+            <PetCard pet={pet} />
           </div>
         </Link>
       ))}
