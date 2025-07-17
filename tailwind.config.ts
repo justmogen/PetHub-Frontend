@@ -279,8 +279,19 @@ export default {
           },
         },
         shimmer: {
-          "0%": { transform: "translateX(-100%)" },
-          "100%": { transform: "translateX(100%)" },
+          "0%": {
+            transform: "translateX(-100%)",
+            backgroundPosition: "200% 0",
+          },
+          "100%": {
+            transform: "translateX(100%)",
+            backgroundPosition: "-200% 0",
+          },
+        },
+        "gradient-shift": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
         },
       },
       animation: {
@@ -291,6 +302,7 @@ export default {
         "scale-in": "scale-in 0.5s ease-out",
         "slide-in-right": "slide-in-right 0.5s ease-out",
         shimmer: "shimmer 2s infinite",
+        "gradient-shift": "gradient-shift 3s ease-in-out infinite",
       },
 
       // Backdrop Blur
@@ -300,6 +312,11 @@ export default {
         md: "8px",
         lg: "16px",
         xl: "24px",
+      },
+
+      // Background Images
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
     },
   },

@@ -2,14 +2,18 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // Note: Keeping Unsplash remote pattern temporarily in case other components still use external images
-    // Remove this configuration once all images are migrated to local storage
     remotePatterns: [
       {
+        protocol: "http",
+        hostname: "localhost",
+        port: "8000",
+        pathname: "/media/**",
+      },
+      {
         protocol: "https",
-        hostname: "images.unsplash.com",
+        hostname: "your-backend-domain.com", // Replace with actual domain when deployed
         port: "",
-        pathname: "/**",
+        pathname: "/media/**",
       },
     ],
   },

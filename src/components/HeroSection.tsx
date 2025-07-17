@@ -11,11 +11,6 @@ import HeroContent from "./hero/HeroContent";
 import HeroImage from "./hero/HeroImage";
 import WaveTransition from "./hero/WaveTransition";
 
-// Import shared styles for enhanced UI
-import sharedGradients from "@/styles/shared/gradients.module.css";
-import sharedAnimations from "@/styles/shared/animations.module.css";
-import sharedPatterns from "@/styles/shared/patterns.module.css";
-
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -157,15 +152,18 @@ const HeroSection = () => {
   return (
     <section
       ref={heroRef}
-      className={`relative h-screen min-h-[600px] bg-gradient-to-br from-primary-50/40 via-background to-secondary-50/30 overflow-hidden ${sharedPatterns.elegantPattern} ${sharedPatterns.complexOverlay}`}
+      className="relative h-screen min-h-[600px] bg-gradient-to-br from-brand-primary/15 via-background to-brand-secondary/15 overflow-hidden"
     >
-      {/* Enhanced background with pattern overlay */}
-      <div
-        className={`absolute inset-0 ${sharedAnimations.subtleShift} opacity-40`}
-      >
-        <div
-          className={`w-full h-full ${sharedGradients.backgroundGradientRadial}`}
-        ></div>
+      {/* Enhanced multi-layer background with animations */}
+      <div className="absolute inset-0 opacity-60">
+        {/* Base gradient layer */}
+        <div className="w-full h-full bg-gradient-radial from-brand-primary/25 via-brand-accent/10 to-brand-secondary/25 animate-pulse"></div>
+
+        {/* Moving gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-brand-primary/20 via-transparent to-brand-secondary/20 animate-float"></div>
+
+        {/* Subtle pattern overlay */}
+        <div className="absolute inset-0 opacity-30 bg-gradient-to-b from-transparent via-brand-neutral/5 to-background/60"></div>
       </div>
 
       {/* Background components */}

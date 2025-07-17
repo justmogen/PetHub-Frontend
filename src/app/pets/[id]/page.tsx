@@ -2,16 +2,16 @@ import { Metadata } from "next";
 import { PetDetailContainer } from "@/components/pets/PetDetailContainer";
 
 interface PetDetailPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({
   params,
 }: PetDetailPageProps): Promise<Metadata> {
   // Use the pet ID for dynamic metadata
-  const petId = params.id;
+  const { id: petId } = await params;
 
   return {
     title: `Pet Details | Pet Hub`,
@@ -24,6 +24,7 @@ export async function generateMetadata({
   };
 }
 
-export default function PetDetailPage({ params }: PetDetailPageProps) {
-  return <PetDetailContainer petId={params.id} />;
+export default async function PetDetailPage({ params }: PetDetailPageProps) {
+  const { id } = await params;
+  return <PetDetailContainer petId={id} />;
 }

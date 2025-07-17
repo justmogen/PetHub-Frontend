@@ -6,7 +6,6 @@
 export const API_CONFIG = {
   // Base URLs
   BASE_URL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000",
-  API_VERSION: "/api/v1",
 
   // Endpoints
   ENDPOINTS: {
@@ -63,7 +62,7 @@ export const API_CONFIG = {
  * Build full API URL
  */
 export const buildApiUrl = (endpoint: string): string => {
-  return `${API_CONFIG.BASE_URL}${API_CONFIG.API_VERSION}${endpoint}`;
+  return `${API_CONFIG.BASE_URL}${endpoint}`;
 };
 
 /**
@@ -80,4 +79,22 @@ export const getEnvironmentConfig = () => {
     enableRetry: true,
     maxRetryAttempts: isDevelopment ? 1 : API_CONFIG.RETRY_ATTEMPTS,
   };
+};
+
+/**
+ * Helper function to get the full URL for backend images
+ */
+export const getImageUrl = (imagePath: string) => {
+  if (!imagePath) return "";
+
+  // If it's already a full URL, return as is
+  if (imagePath.startsWith("http")) return imagePath;
+
+  // If it starts with /media, prepend the base URL
+  if (imagePath.startsWith("/media")) {
+    return `${API_CONFIG.BASE_URL}${imagePath}`;
+  }
+
+  // Otherwise, assume it's a relative path and add /media/ prefix
+  return `${API_CONFIG.BASE_URL}/media/${imagePath}`;
 };
