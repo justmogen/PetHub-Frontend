@@ -152,40 +152,69 @@ const HeroSection = () => {
   return (
     <section
       ref={heroRef}
-      className="relative h-screen min-h-[600px] bg-gradient-to-br from-brand-primary/15 via-background to-brand-secondary/15 overflow-hidden"
+      className="relative h-[90vh] min-h-[600px] flex flex-col justify-between overflow-hidden bg-gradient-to-br from-brand-primary/20 via-background to-brand-secondary/20"
     >
-      {/* Enhanced multi-layer background with animations */}
-      <div className="absolute inset-0 opacity-60">
-        {/* Base gradient layer */}
-        <div className="w-full h-full bg-gradient-radial from-brand-primary/25 via-brand-accent/10 to-brand-secondary/25 animate-pulse"></div>
-
-        {/* Moving gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-brand-primary/20 via-transparent to-brand-secondary/20 animate-float"></div>
-
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-30 bg-gradient-to-b from-transparent via-brand-neutral/5 to-background/60"></div>
-      </div>
-
-      {/* Background components */}
-      <HeroBackground backgroundRef={backgroundRef} />
-      <FloatingPaws pawsRef={pawsRef} />
-      <FloatingOrbs floatingElementsRef={floatingElementsRef} />
-
-      {/* Content */}
-      <div className="relative z-20 container mx-auto px-4 md:px-6 h-full flex items-center">
-        <HeroContent
-          titleRef={titleRef}
-          subtitleRef={subtitleRef}
-          buttonRef={buttonRef}
-          matchButtonRef={matchButtonRef}
+      {/* --- Design System Animated Gradient Background --- */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* Main animated radial gradient */}
+        <div
+          className="absolute inset-0 w-full h-full bg-gradient-radial from-brand-primary/50 via-brand-accent/20 to-brand-secondary/40 animate-gradient-shift opacity-90"
+          style={{ backgroundSize: "200% 200%" }}
         />
-
-        {/* Hero Image */}
-        <HeroImage />
+        {/* Animated overlay gradient */}
+        <div className="absolute inset-0 w-full h-full bg-gradient-to-tr from-brand-primary/30 via-transparent to-brand-secondary/30 animate-float opacity-70" />
+        {/* Subtle SVG pattern overlay using design system accent */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-10"
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <pattern
+              id="dots"
+              x="0"
+              y="0"
+              width="12"
+              height="12"
+              patternUnits="userSpaceOnUse"
+            >
+              <circle cx="2" cy="2" r="1.5" fill="#F4A460" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#dots)" />
+        </svg>
       </div>
 
-      {/* Wave transition at bottom */}
-      <WaveTransition />
+      {/* --- Animated Floating Background Elements (connected, design system) --- */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        <HeroBackground backgroundRef={backgroundRef} />
+        <FloatingPaws pawsRef={pawsRef} />
+        <FloatingOrbs floatingElementsRef={floatingElementsRef} />
+      </div>
+
+      {/* --- Main Content, visually connected --- */}
+      <div className="relative z-20 flex-1 flex flex-col justify-center">
+        <div className="container mx-auto px-4 md:px-6 h-full flex flex-col md:flex-row items-center gap-8 md:gap-16">
+          <div className="flex-1 flex flex-col items-start justify-center space-y-8 md:space-y-10">
+            <HeroContent
+              titleRef={titleRef}
+              subtitleRef={subtitleRef}
+              buttonRef={buttonRef}
+              matchButtonRef={matchButtonRef}
+            />
+          </div>
+          {/* Hero Image visually connected with content */}
+          <div className="flex-1 flex items-center justify-center md:justify-end mt-8 md:mt-0">
+            <HeroImage />
+          </div>
+        </div>
+      </div>
+
+      {/* --- Wave transition at bottom, visually connected --- */}
+      <div className="relative z-30">
+        <WaveTransition />
+      </div>
     </section>
   );
 };

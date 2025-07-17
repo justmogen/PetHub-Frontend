@@ -14,7 +14,7 @@ import type { ApiResponse, ApiError } from "./types";
 
 // Custom base query with enhanced error handling and retry logic
 const baseQuery = fetchBaseQuery({
-  baseUrl: `${API_CONFIG.BASE_URL}${API_CONFIG}`,
+  baseUrl: API_CONFIG.BASE_URL,
   prepareHeaders: (headers) => {
     // Set default headers
     Object.entries(API_CONFIG.DEFAULT_HEADERS).forEach(([key, value]) => {
